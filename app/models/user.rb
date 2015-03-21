@@ -6,9 +6,7 @@ class User < ActiveRecord::Base
 	validates :first, presence: true
 	validates :last, presence: true
 	validates :education, presence: true
-	validates :education_sub, presence: true
 	validates :occupation, presence: true
-	validates :occupation_sub, presence: true
 
 	def self.authenticate email, password
     User.find_by_email(email).try(:authenticate, password)
