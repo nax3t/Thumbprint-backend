@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
-    @user = User.authenticate(params[:user][:username], params[:user][:password])
+    @user = User.authenticate(params[:user][:email], params[:user][:password])
 
     if @user
       session[:user_id] = @user.id
